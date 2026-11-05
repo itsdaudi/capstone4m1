@@ -10,8 +10,8 @@ export class PipelineStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'CapstonePipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.connection('YOUR_USER/YOUR_REPO', 'main', {
-          connectionArn: 'PASTE_YOUR_CONNECTION_ARN',
+        input: CodePipelineSource.connection('itsdaudi/capstone4m1', 'main', {
+          connectionArn: 'arn:aws:codeconnections:us-east-2:325657596892:connection/f75f9621-da72-4729-9081-0c8dcd18b890',
         }),
         commands: ['npm ci', 'npm run build', 'npx cdk synth'],
       }),
