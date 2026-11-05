@@ -12,7 +12,7 @@ export class WorkflowStack extends cdk.Stack {
     // ---------- STEP 1 ----------
     const configParam = new ssm.StringParameter(this, 'AppGreeting', {
       parameterName: '/app/config/greeting',
-      stringValue: 'Hello from CI/CD Automated Infrastructure!',
+      stringValue: 'Hello from CI/CD Automated Infrastructure v2!',
     });
 
     const myLambda = new lambda.Function(this, 'WorkflowTask', {
